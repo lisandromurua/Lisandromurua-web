@@ -207,3 +207,36 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
   .section, .about { padding-top: 80px; padding-bottom: 80px; }
   .contact__grid { padding-top: 80px; }
 }
+
+/* ---------- Caso v2: imagen protagonista (estilo RAAK / n-others) ---------- */
+.cs-hero { margin: 8px 0 0; }
+.cs-hero img { width: 100%; height: auto; }
+
+.cs-intro { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px 64px; padding-top: 56px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.cs-intro__text { display: flex; flex-direction: column; gap: 24px; }
+.cs-intro .meta { margin: 0; border-top: 0; padding-top: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; }
+
+.cs-block { padding-top: 104px; display: flex; flex-direction: column; gap: 32px; }
+.cs-block__head { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px 64px; align-items: start; }
+.cs-block__title { display: flex; flex-direction: column; gap: 12px; }
+.cs-block__title .h2 { font-size: clamp(28px, 3vw, 36px); }
+.cs-block__head .body { max-width: 560px; }
+
+.g { display: grid; gap: 12px; align-items: start; }
+.tile { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.tile img, .tile video { width: 100%; height: auto; display: block; border-radius: 4px; }
+.tile--white img, .tile--white video { background: #FFFFFF; }
+.tile--frame img, .tile--frame video { border: 1px solid var(--line-soft); }
+.tile figcaption { font-family: var(--mono); font-size: 12px; letter-spacing: 0.02em; line-height: 1.5; color: var(--muted); }
+.tile--narrow { max-width: 960px; margin-inline: auto; width: 100%; }
+
+.cs-close { margin: 104px 0 0; }
+.cs-close img { width: 100%; height: auto; border-radius: 4px; }
+.cs-close figcaption { margin-top: 10px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .g { grid-template-columns: minmax(0, 1fr) !important; }
+  .cs-block { padding-top: 72px; }
+  .cs-close { margin-top: 72px; }
+  .cs-intro .meta { grid-template-columns: minmax(0, 1fr); }
+}

@@ -33,7 +33,28 @@
       .catch(function () {}); // si falla, el pie queda sin contador
   }
 
+  // ---------- videos en bucle: se reproducen solo cuando están en pantalla ----------
+  function initLoopVideos() {
+    var vids = document.querySelectorAll('video[data-loop]');
+    if (!vids.length) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    vids.forEach(function (v) {
+      v.muted = true; v.loop = true; v.playsInline = true;
+      if (reduce) { v.controls = true; }
+    });
+    if (reduce || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else { v.pause(); }
+      });
+    }, { threshold: 0.35 });
+    vids.forEach(function (v) { io.observe(v); });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    initLoopVideos();
     document.querySelectorAll('[data-set-lang]').forEach(function (b) {
       b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang')); });
     });
