@@ -26,7 +26,7 @@
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
       .then(function (d) {
         var raw = String(d.count != null ? d.count : (d.count_unique || '')).replace(/\D/g, '');
-        if (!raw) return;
+        if (!raw || Number(raw) === 0) return; // con 0 visitas no se muestra
         box.querySelector('strong').textContent = Number(raw).toLocaleString('es-AR');
         box.hidden = false;
       })
