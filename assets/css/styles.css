@@ -112,6 +112,10 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .project__body { display: flex; flex-direction: column; gap: 8px; }
 .project__body p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
 .project__more { font-size: 13px; font-weight: 500; color: var(--accent); }
+/* lista de proyectos recortada a 3 filas con difuminado (lo activa main.js) */
+.projects-more { display: none; }
+.projects-wrap.is-clamped .projects { overflow: hidden; max-height: var(--clamp-h); -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - var(--fade-h)), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - var(--fade-h)), transparent); }
+.projects-wrap.is-clamped .projects-more { display: flex; justify-content: center; margin-top: -24px; position: relative; }
 
 /* Proceso */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 32px 28px; }
