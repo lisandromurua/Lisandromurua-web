@@ -149,7 +149,7 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 .cv__col { display: flex; flex-direction: column; gap: 14px; }
 .cv__col .label { margin: 0; font-weight: 400; }
 .cv__col .label + .cv__list, .cv__col .label + .cv__p { margin-top: -4px; }
-.cv__col .cv__p + .label { margin-top: 12px; }
+.cv__col .cv__p + .label, .cv__col .cv__list + .label { margin-top: 12px; }
 .cv__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
 .cv__list li { display: flex; flex-direction: column; gap: 4px; }
 .cv__list strong { font-weight: 500; font-size: 15px; }
