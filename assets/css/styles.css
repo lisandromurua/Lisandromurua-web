@@ -142,6 +142,8 @@ h1, h2, h3 { margin: 0; font-weight: 600; }
 /* Sobre mí */
 .about { display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start; padding-top: 112px; padding-bottom: 104px; }
 .about__media { flex: 1 1 440px; min-width: 0; border-radius: var(--radius); overflow: hidden; background: var(--card); }
+.about__role { margin: -14px 0 0; font-size: 17px; color: var(--muted); }
+.about__text .body strong { font-weight: 600; color: var(--ink); }
 .about-page .about { padding-bottom: 72px; }
 .cv { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px 48px; padding-top: 48px; padding-bottom: 104px; border-top: 1px solid var(--line); }
 .cv__col { display: flex; flex-direction: column; gap: 14px; }
